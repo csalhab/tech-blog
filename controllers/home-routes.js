@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   });
   //const posts = postsData.map((post) => post.get({ plain: true }));
   //res.render("all", { posts });
-  res.send("it worked");
+  res.send("hellow there .. it worked");
 });
 
 module.exports = router;
