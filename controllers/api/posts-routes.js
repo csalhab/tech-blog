@@ -13,7 +13,11 @@ const Posts = require("../../models/Posts");
 //     res.status(400).json(err);
 //   }
 // });
+router.get("/", async (req, res) => {
+    res.send("this is from the posts-route.js file!!");
+});
 
+)
 // // route to update a post
 // router.put("/:id", async (req, res) => {
 //   try {
