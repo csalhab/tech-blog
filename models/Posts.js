@@ -32,8 +32,8 @@ Posts.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "gallery",
+    modelName: "posts",
   }
 );
 
-module.exports = Gallery;
+module.exports = Posts;
