@@ -5,16 +5,15 @@ const Posts = require("../../models/Posts");
 router.post("/", async (req, res) => {
   try {
     const postsData = await Posts.create({
-      title: req.body.dish_name,
-      content: req.body.description,
+      title: req.body.title,
+      content: req.body.content,
     });
-    res.status(200).json(dishData);
+    res.status(200).json(postsData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-)
 // route to update a post
 router.put("/:id", async (req, res) => {
   try {
@@ -29,7 +28,7 @@ router.put("/:id", async (req, res) => {
         },
       }
     );
-    res.status(200).json(dish);
+    res.status(200).json(post);
   } catch (err) {
     res.status(500).json(err);
   }
