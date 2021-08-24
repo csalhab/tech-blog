@@ -3,12 +3,15 @@ const Posts = require("../models/Posts");
 
 // route to get all posts
 router.get("/", async (req, res) => {
-  const postsData = await Posts.findAll().catch((err) => {
-    res.json(err);
-  });
-  //const posts = postsData.map((post) => post.get({ plain: true }));
-  //res.render("all", { posts });
-  res.send("hellow there .. it worked");
+  try {
+    const postsData = await Posts.findAll();
+    //res.status(200).json(postsData);
+    res.send("hellow there .. it worked");
+    //const posts = postsData.map((post) => post.get({ plain: true }));
+    //res.render("all", { posts });
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 module.exports = router;
