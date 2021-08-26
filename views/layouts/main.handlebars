@@ -34,7 +34,11 @@
             </div>
         </div>
     </nav>
+    {{#if logged_in}}
+    <div class="the-tech-blog">Dashboard</div>
+    {{else}}
     <div class="the-tech-blog">The Tech Blog</div>
+    {{/if}}
   </div>
       <main class="container container-fluid mt-5">
         {{{ body }}}
