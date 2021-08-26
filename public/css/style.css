@@ -1,5 +1,7 @@
 * {
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
   font-size: 24px;
 }
 
@@ -40,4 +42,88 @@
   padding: 20px;
   font-size: 1.05em;
   color: #bab9b7;
+}
+
+.login-container {
+  margin-bottom: 30px;
+  border: 3px solid #2a2423;
+  background-color: #2a2423;
+  border-radius: 7px;
+}
+
+.login-title-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2a2423;
+  padding: 20px;
+  color: #c4d0c8;
+}
+
+.login-title {
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
+.login-content {
+  background-color: #c4d0c8;
+  padding: 20px;
+  font-size: 1.05em;
+}
+
+.btn-login {
+  background-color: #5d5554;
+  margin-bottom: 10px;
+}
+
+.the-tech-blog {
+  padding-bottom: 70px;
+  background-color: #2a2423;
+  color: #c4d0c8;
+  margin-left: 50px;
+  margin-top: 30px;
+  font-size: 3em;
+}
+
+.top-container {
+  background-color: #2a2423;
+}
+
+.signup-container {
+  margin-bottom: 30px;
+  border: 3px solid #2a2423;
+  background-color: #2a2423;
+  border-radius: 7px;
+}
+
+.signup-title-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2a2423;
+  padding: 20px;
+  color: #c4d0c8;
+}
+
+.signup-title {
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
+.signup-content {
+  background-color: #c4d0c8;
+  padding: 20px;
+  font-size: 1.05em;
+}
+
+.btn-signup {
+  background-color: #5d5554;
+  margin-bottom: 10px;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: gray;
+  text-align: center;
+  padding-top: 200px;
 }

@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const Posts = require("../models/Posts");
 const User = require("../models/User");
+const withAuth = require("../utils/auth");
 
 // route to get all posts
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     // const postsData = await Posts.findAll({
     //   where: { user_id: 3 },
@@ -27,7 +28,23 @@ router.get("/", async (req, res) => {
     const posts = postsData.map((post) => post.get({ plain: true }));
     console.log(posts);
     //res.json(postsData);
-    res.render("all", { posts });
+    res.render("home", { posts });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.get("/login", async (req, res) => {
+  try {
+    res.render("login");
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.get("/signup", async (req, res) => {
+  try {
+    res.render("signup");
   } catch (err) {
     res.status(400).json(err);
   }

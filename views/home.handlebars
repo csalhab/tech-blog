@@ -1,8 +1,20 @@
-<div class="posts-container-logged-out">
-  <div><h2>Title</h2><h3>Posted by xxxx on mm/dd/yyy</h3></div>
-  <div><h3>comment</h3></div>
-</div>
-
-<div class="posts-container-logged-in">
-  <div><h3>comment</h3><h3>mm/dd/yyy</h3></div>
-</div>
+{{#each posts as |post|}}
+  {{!-- {{#each users as |user|}} --}}
+  {{#if loggedIn}}
+    <div class="posts-container">
+      <div class="posts-title-container">
+        <div class="posts-title">{{title}}</div>
+        <div class="posts-title-byline">Posted by
+          {{user_id}}
+          on mm/dd/yyyy</div>
+      </div>
+      <div class="posts-content">{{content}}</div>
+    </div>
+  {{else}}
+    <div class="posts-container-logged-out">
+      <div class="posts-content-logged-out">{{post.content}}</div>
+    </div>
+  {{/if}}
+{{/each}}
+{{! 
+<script src="/js/add-dish.js"></script> }}
