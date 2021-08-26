@@ -5,6 +5,7 @@ const withAuth = require("../utils/auth");
 
 // route to get all posts
 router.get("/", withAuth, async (req, res) => {
+  console.log(req.session.logged_in);
   try {
     // const postsData = await Posts.findAll({
     //   where: { user_id: 3 },
@@ -36,6 +37,10 @@ router.get("/", withAuth, async (req, res) => {
 
 router.get("/login", async (req, res) => {
   try {
+    if (req.session.logged_in) {
+      res.redirect("/");
+      return;
+    }
     res.render("login");
   } catch (err) {
     res.status(400).json(err);
@@ -44,6 +49,10 @@ router.get("/login", async (req, res) => {
 
 router.get("/signup", async (req, res) => {
   try {
+    if (req.session.logged_in) {
+      res.redirect("/");
+      return;
+    }
     res.render("signup");
   } catch (err) {
     res.status(400).json(err);
