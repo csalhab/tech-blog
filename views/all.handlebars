@@ -1,15 +1,18 @@
 {{#each posts as |post|}}
+  {{!-- {{#each users as |user|}} --}}
   {{!-- {{#if loggedIn}} --}}
   <div class="posts-container">
     <div class="posts-title-container">
-      <div class="posts-title">{{post.title}}</div>
-      <div class="posts-title-byline">Posted by xxx on xx/dd/yyy</div>
+      <div class="posts-title">{{title}}</div>
+      <div class="posts-title-byline">Posted by
+        {{user_id}}
+        on xx/dd/yyy</div>
     </div>
-    <div class="posts-content">{{post.content}}</div>
+    <div class="posts-content">{{content}}</div>
   </div>
   {{!-- {{else}} --}}
   <div class="posts-container-logged-out">
-    <div class="posts-content-logged-out">{{post.content}}</div>
+    {{!-- <div class="posts-content-logged-out">{{post.content}}</div> --}}
   </div>
   {{!-- {{/if}} --}}
 {{/each}}
