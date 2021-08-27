@@ -75,13 +75,23 @@
   margin-bottom: 10px;
 }
 
-.the-tech-blog {
+.the-tech-blog-your-dashboard {
   padding-bottom: 70px;
   background-color: #2a2423;
   color: #c4d0c8;
   margin-left: 50px;
   margin-top: 30px;
   font-size: 3em;
+}
+
+.the-tech-blog-your-dashboard-title {
+  background-color: #c4d0c8;
+  color: #2a2423;
+  border-radius: 7px;
+  box-shadow: 5px 10px #888888;
+  font-size: 1em;
+  padding: 10px;
+  font-weight: bold;
 }
 
 .top-container {
