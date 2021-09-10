@@ -129,6 +129,11 @@
   margin-bottom: 10px;
 }
 
+.new-post-button {
+  display: flex;
+  justify-content: center;
+}
+
 .footer {
   left: 0;
   bottom: 0;

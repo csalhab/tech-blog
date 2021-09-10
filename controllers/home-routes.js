@@ -28,14 +28,13 @@ router.get("/", withAuth, async (req, res) => {
     console.log(postsData);
     const posts = postsData.map((post) => post.get({ plain: true }));
     console.log(posts);
-    //res.json(postsData);
     res.render("home", { posts, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.get("/login", async (req, res) => {
+router.get("/login", (req, res) => {
   try {
     if (req.session.logged_in) {
       res.redirect("/");
@@ -47,12 +46,8 @@ router.get("/login", async (req, res) => {
   }
 });
 
-router.get("/signup", async (req, res) => {
+router.get("/signup", (req, res) => {
   try {
-    if (req.session.logged_in) {
-      res.redirect("/");
-      return;
-    }
     res.render("signup");
   } catch (err) {
     res.status(400).json(err);

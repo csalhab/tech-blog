@@ -1,6 +1,11 @@
 const router = require("express").Router();
 const Posts = require("../../models/Posts");
 
+// route to handle "+ New Post" button to load partial
+router.get("/", (req, res) => {
+  res.render("partials/create-post");
+});
+
 // route to create/add a post
 router.post("/", async (req, res) => {
   try {

@@ -1,7 +1,7 @@
-async function newFormHandler(event) {
+async function sendToAPINewPost(event) {
   event.preventDefault();
-  const dish_name = document.querySelector("#title").value;
-  const description = document.querySelector("#content").value;
+  const title = document.querySelector("#title").value;
+  const content = document.querySelector("#content").value;
 
   const response = await fetch(`/api/posts`, {
     method: "POST",
@@ -22,5 +22,5 @@ async function newFormHandler(event) {
 }
 
 document
-  .querySelector(".new-post-form")
-  .addEventListener("submit", newFormHandler);
+  .querySelector(".new-post-button")
+  .addEventListener("click", addNewPost);
