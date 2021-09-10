@@ -16,7 +16,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="/dashboard">Dashboard</a>
@@ -27,18 +27,18 @@
                 </li>
                 {{else}}
                 <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="/login">Login</a>
                 </li>
                 {{/if}}
             </ul>
             </div>
         </div>
     </nav>
-    {{#if logged_in}}
+    {{!-- {{#if logged_in}}
     <div class="the-tech-blog-your-dashboard"><span class="the-tech-blog-your-dashboard-title">Your Dashboard</span></div>
-    {{else}}
+    {{else}} --}}
     <div class="the-tech-blog-your-dashboard"><span class="the-tech-blog-your-dashboard-title">The Tech Blog</span></div>
-    {{/if}}
+    {{!-- {{/if}} --}}
   </div>
       <main class="container container-fluid mt-5">
         {{{ body }}}
@@ -55,6 +55,8 @@
 
 {{#if logged_in}}
 <script src="/js/logout.js"></script>
+
+<script></script>
 {{/if}}
   </body>
 

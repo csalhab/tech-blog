@@ -3,9 +3,10 @@ const Post = require("../models/Post");
 const User = require("../models/User");
 const withAuth = require("../utils/auth");
 
-// route to get all posts
+// home-routes are just the views for:
+// GET /
+// route to get all posts to be displayed on / home.handlebars view
 router.get("/", async (req, res) => {
-  console.log(req.session.logged_in);
   try {
     // const postsData = await Post.findAll({
     //   where: { user_id: 3 },
@@ -34,6 +35,9 @@ router.get("/", async (req, res) => {
   }
 });
 
+// home-routes are just the views for:
+// GET /login
+// route if logged_in true redirect to / which is homepage which is just home.handlebars view, and if logged_in false display login.handlebars view
 router.get("/login", (req, res) => {
   try {
     if (req.session.logged_in) {
@@ -46,6 +50,9 @@ router.get("/login", (req, res) => {
   }
 });
 
+// home-routes are just the views for:
+// GET /signup
+// route is /signup which is just to display signup.handlebars view when called to do so
 router.get("/signup", (req, res) => {
   try {
     res.render("signup");
