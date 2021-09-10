@@ -1,8 +1,9 @@
-async function sendToAPINewPost(event) {
+async function createNewPost(event) {
   event.preventDefault();
   const title = document.querySelector("#title").value;
   const content = document.querySelector("#content").value;
 
+  console.log("create new post button clicked: " + title);
   const response = await fetch(`/api/posts`, {
     method: "POST",
     body: JSON.stringify({
@@ -22,5 +23,5 @@ async function sendToAPINewPost(event) {
 }
 
 document
-  .querySelector(".new-post-button")
-  .addEventListener("click", addNewPost);
+  .querySelector(".create-new-post")
+  .addEventListener("submit", createNewPost);

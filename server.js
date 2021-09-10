@@ -10,11 +10,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 var viewsPath = path.join(__dirname, "/views/");
-const hbs = exphbs.create({
-  defaultLayout: "main",
-  layoutsDir: viewsPath + "/layouts",
-  partialsDir: viewsPath + "/partials",
-});
+const hbs = exphbs.create();
 
 const sess = {
   secret: process.env.SESSION_PASSWORD,

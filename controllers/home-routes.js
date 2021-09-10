@@ -1,20 +1,20 @@
 const router = require("express").Router();
-const Posts = require("../models/Posts");
+const Post = require("../models/Post");
 const User = require("../models/User");
 const withAuth = require("../utils/auth");
 
 // route to get all posts
-router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   console.log(req.session.logged_in);
   try {
-    // const postsData = await Posts.findAll({
+    // const postsData = await Post.findAll({
     //   where: { user_id: 3 },
     // });
-    // const postsData = await Posts.findAll({
+    // const postsData = await Post.findAll({
     //   include: [{ model: User, required: true, as: "username" }],
     // });
-    //const postsData = await User.findAll({ include: Posts });
-    // const postsData = await Posts.findAll({
+    //const postsData = await User.findAll({ include: Post });
+    // const postsData = await Post.findAll({
     //   attributes: {
     //     include: [
     //       sequelize.literal(
@@ -24,7 +24,7 @@ router.get("/", withAuth, async (req, res) => {
     //     ],
     //   },
     // });
-    const postsData = await Posts.findAll();
+    const postsData = await Post.findAll();
     console.log(postsData);
     const posts = postsData.map((post) => post.get({ plain: true }));
     console.log(posts);

@@ -1,5 +1,5 @@
 const sequelize = require("../config/connection");
-const { Posts } = require("../models");
+const { Post } = require("../models");
 
 const seedUser = require("./userData");
 const postsSeedData = require("./postsData.json");
@@ -10,7 +10,7 @@ const seedAll = async () => {
   const users = await seedUser();
 
   for (const post of postsSeedData) {
-    const newPost = await Posts.create({
+    const newPost = await Post.create({
       ...post,
       //attach user_id foreign key's value based on a random users.id to each post
       user_id: users[Math.floor(Math.random() * users.length)].id,

@@ -4,11 +4,11 @@ CREATE DATABASE techblog_db;
 
 USE techblog_db;
 
-select * from posts;
+select * from post;
 select * from user;
 
-select * from posts
+select * from post
 where user_id = 1;
 
-select posts.id, posts.title, posts.content, posts.user_id, user.username from posts
-INNER JOIN user ON user.id = posts.user_id;
+select post.id, post.title, post.content, post.user_id, user.username from post
+INNER JOIN user ON user.id = post.user_id;

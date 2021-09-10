@@ -25,10 +25,10 @@
                 <li class="nav-item">
                 <a class="nav-link" href="#" id="logout">Logout</a>
                 </li>
-                {{!-- {{else}}
+                {{else}}
                 <li class="nav-item">
                 <a class="nav-link" href="#">Login</a>
-                </li> --}}
+                </li>
                 {{/if}}
             </ul>
             </div>
@@ -43,9 +43,7 @@
       <main class="container container-fluid mt-5">
         {{{ body }}}
         {{#if logged_in}}
-        <div class="new-post-button">
-          <a href="/api/posts/"><button type="button" class="btn btn-dark btn-lg">+ New Post</button></a>
-        </div>
+  
         {{else}}
         <footer>
             <p class="footer">Copyright © 2021. All rights reserved. The Tech Blog Folks.</p>
