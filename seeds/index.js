@@ -13,7 +13,7 @@ const seedAll = async () => {
     const newPost = await Post.create({
       ...post,
       //attach user_id foreign key's value based on a random users.id to each post
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+      user_id: users[Math.floor(Math.random() * users.length - 1)].id,
     });
   }
   //await seedPosts();

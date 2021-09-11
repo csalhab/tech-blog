@@ -1,14 +1,14 @@
 const router = require("express").Router();
-const Post = require("../models/Post");
-const User = require("../models/User");
+const { Post, User } = require("../models");
 
 // route to get all posts on dashboard
 // /dashboard
 router.get("/", async (req, res) => {
+  console.log(req.session);
   try {
     const postsData = await Post.findAll({
       where: {
-        user_id: User.id,
+        user_id: req.session.userId,
       },
       include: {
         model: User,
@@ -18,8 +18,9 @@ router.get("/", async (req, res) => {
     const posts = postsData.map((post) => post.get({ plain: true }));
     console.log(posts);
     //res.json(postsData);
-    res.render("dashboard", { posts, logged_in: true });
+    res.render("dashboard", { posts });
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });

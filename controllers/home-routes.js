@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const Post = require("../models/Post");
-const User = require("../models/User");
+const { Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 // home-routes are just the views for:
@@ -25,12 +24,15 @@ router.get("/", async (req, res) => {
     //     ],
     //   },
     // });
-    const postsData = await Post.findAll();
-    console.log(postsData);
+    //const user = await User.findAll({ include: Post });
+    const postsData = await Post.findAll({ include: User });
+    //console.log(user);
+    //console.log(postsData);
     const posts = postsData.map((post) => post.get({ plain: true }));
-    console.log(posts);
+    console.table(posts);
     res.render("home", { posts, logged_in: req.session.logged_in });
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });

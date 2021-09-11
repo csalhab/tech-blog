@@ -1,11 +1,15 @@
-{{#each posts as |post|}}
-  <div class="posts-container">
-    <div class="posts-title-container">
-      <div class="posts-title">{{title}}</div>
-      <div class="posts-title-byline">Posted by
-        {{user_id}}
-        on xx/dd/yyy</div>
+{{#if posts.length}}
+  {{#each posts as |post|}}
+    <div class="posts-container">
+      <div class="posts-title-container">
+        <div class="posts-title">{{title}}</div>
+        <div class="posts-title-byline">Posted by
+          {{user_id}}
+          on xx/dd/yyy</div>
+      </div>
+      <div class="posts-content">{{content}}</div>
     </div>
-    <div class="posts-content">{{content}}</div>
-  </div>
-{{/each}}
+  {{/each}}
+{{else}}
+  <div>No Posts!</div>
+{{/if}}
