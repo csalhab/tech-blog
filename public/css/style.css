@@ -37,6 +37,11 @@
   font-size: 1.05em;
 }
 
+.posts-edit-btn {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .posts-content-logged-out {
   background-color: #5d5554;
   padding: 20px;

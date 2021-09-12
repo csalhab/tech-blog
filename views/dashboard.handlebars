@@ -9,6 +9,15 @@
           {{formatDate createdAt}}</div>
       </div>
       <div class="posts-content">{{content}}</div>
+      <div class="posts-content posts-edit-btn">
+        <a href="/dashboard/editPost/">
+          <button
+            type="button"
+            class="btn btn-dark btn-lg"
+            id="{{id}}"
+          >Edit</button>
+        </a>
+      </div>
     </div>
   {{/each}}
 {{else}}
