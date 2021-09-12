@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
     const posts = postsData.map((post) => post.get({ plain: true }));
     console.log(posts);
     //res.json(postsData);
-    res.render("dashboard", { posts });
+    res.render("dashboard", { posts, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
 });
 // GET /dashboard/newPost
 router.get("/newPost", async (req, res) => {
-  res.render("create-post", { logged_in: true });
+  res.render("create-post", { logged_in: req.session.logged_in });
 });
 
 module.exports = router;

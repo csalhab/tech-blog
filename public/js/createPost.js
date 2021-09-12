@@ -16,12 +16,10 @@ async function createNewPost(event) {
   });
 
   if (response.ok) {
-    document.location.replace("/");
+    document.location.replace("/dashboard");
   } else {
     alert("Failed to add post");
   }
 }
 
-document
-  .querySelector(".create-new-post")
-  .addEventListener("submit", createNewPost);
+document.querySelector("#create-btn").addEventListener("click", createNewPost);

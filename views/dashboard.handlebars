@@ -5,7 +5,8 @@
         <div class="posts-title">{{title}}</div>
         <div class="posts-title-byline">Posted by
           {{user_id}}
-          on xx/dd/yyy</div>
+          on
+          {{formatDate createdAt}}</div>
       </div>
       <div class="posts-content">{{content}}</div>
     </div>
@@ -13,3 +14,9 @@
 {{else}}
   <div>No Posts!</div>
 {{/if}}
+<div>
+  <a href="/dashboard/newPost/"><button
+      type="button"
+      class="btn btn-dark btn-lg"
+    >+ New Post</button></a>
+</div>
