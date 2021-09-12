@@ -1,6 +1,6 @@
 {{#each posts as |post|}}
   {{!-- {{#each users as |user|}} --}}
-  {{#if logged_in}}
+  {{!-- {{#if logged_in}}
     <div class="posts-container">
       <div class="posts-title-container">
         <div class="posts-title">{{title}}</div>
@@ -10,12 +10,24 @@
       </div>
       <div class="posts-content">{{content}}</div>
     </div>
-  {{else}}
-    <div class="posts-container-logged-out">
+  {{else}} --}}
+  {{!-- <div class="posts-container-logged-out">
       <div class="posts-content-logged-out">{{post.content}}</div>
     </div>
     {{!-- <div>{{post.user.username}}</div> --}}
-  {{/if}}
+
+  <div class="posts-container">
+    <div class="posts-title-container">
+      <div class="posts-title">{{title}}</div>
+      <div class="posts-title-byline">Posted by
+        {{user.username}}
+        on
+        {{formatDate createdAt}}</div>
+    </div>
+    <div class="posts-content">{{content}}</div>
+  </div>
+
+  {{!-- {{/if}} --}}
 {{/each}}
 <div>
   <a href="/dashboard/newPost/"><button
@@ -23,3 +35,7 @@
       class="btn btn-dark btn-lg"
     >+ New Post</button></a>
 </div>
+<script>
+  var options = { day: 'numeric', month: 'numeric', year: 'numeric' };
+
+</script>

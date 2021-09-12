@@ -1,12 +1,12 @@
 const router = require("express").Router();
 const { Post, User } = require("../models");
-const withAuth = require("../utils/auth");
 
 // home-routes are just the views for:
 // GET /
 // route to get all posts to be displayed on / home.handlebars view
 router.get("/", async (req, res) => {
   try {
+    // these are all attempts from Deep helping:
     // const postsData = await Post.findAll({
     //   where: { user_id: 3 },
     // });
@@ -25,11 +25,16 @@ router.get("/", async (req, res) => {
     //   },
     // });
     //const user = await User.findAll({ include: Post });
-    const postsData = await Post.findAll({ include: User });
-    //console.log(user);
-    //console.log(postsData);
+    //const postsData = await Post.findAll({ include: User });
+    const postsData = await Post.findAll({
+      include: {
+        model: User,
+        attributes: ["id", "username"],
+      },
+    });
     const posts = postsData.map((post) => post.get({ plain: true }));
     console.table(posts);
+    //res.render("home", { posts, logged_in: req.session.logged_in });
     res.render("home", { posts, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
