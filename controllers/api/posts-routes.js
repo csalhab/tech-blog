@@ -21,6 +21,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// POST /api/post/:id
 // route to update a post
 router.put("/:id", async (req, res) => {
   try {

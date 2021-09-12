@@ -1,5 +1,6 @@
 async function editFormHandler(event) {
   event.preventDefault();
+  console.log("edit post button clicked");
   const title = document.querySelector("#title").value;
   const content = document.querySelector("#content").value;
 
@@ -20,12 +21,12 @@ async function editFormHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace(`/posts/${id}`);
+    document.location.replace(`/dashboard`);
   } else {
     alert("Failed to edit post");
   }
 }
 
 document
-  .querySelector(".edit-post-form")
-  .addEventListener("submit", editFormHandler);
+  .querySelector("#update-btn")
+  .addEventListener("click", editFormHandler);
