@@ -55,4 +55,20 @@ router.get("/editPost/:id", async (req, res) => {
   }
 });
 
+// GET /dashboard/deletePost/:id
+router.get("/deletePost/:id", async (req, res) => {
+  console.log("delete post now, req.param.id: ", req.params.id);
+  try {
+    let postsData = await Post.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.render("dashboard", { logged_in: req.session.logged_in });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;

@@ -18,6 +18,16 @@
           >Edit</button>
         </a>
       </div>
+      <div class="posts-content posts-delete-btn">
+        {{!-- <a href="/dashboard/deletePost/{{id}}"> --}}
+        <button
+          type="button"
+          class="btn btn-dark btn-lg"
+          id="delete-btn"
+          onclick="deletePost(event, {{id}})"
+        >Delete</button>
+        {{! </a> }}
+      </div>
     </div>
   {{/each}}
 {{else}}
@@ -29,3 +39,4 @@
       class="btn btn-dark btn-lg"
     >+ New Post</button></a>
 </div>
+<script src="/js/deletePost.js"></script>
