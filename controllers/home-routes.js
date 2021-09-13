@@ -35,7 +35,11 @@ router.get("/", async (req, res) => {
     const posts = postsData.map((post) => post.get({ plain: true }));
     console.table(posts);
     //res.render("home", { posts, logged_in: req.session.logged_in });
-    res.render("home", { posts, logged_in: req.session.logged_in });
+    res.render("home", {
+      posts,
+      logged_in: req.session.logged_in,
+      isHome: true,
+    });
   } catch (err) {
     console.log(err);
     res.status(400).json(err);

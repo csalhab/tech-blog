@@ -34,11 +34,11 @@
             </div>
         </div>
     </nav>
-    {{!-- {{#if logged_in}}
-    <div class="the-tech-blog-your-dashboard"><span class="the-tech-blog-your-dashboard-title">Your Dashboard</span></div>
-    {{else}} --}}
-    <div class="the-tech-blog-your-dashboard"><span class="the-tech-blog-your-dashboard-title">The Tech Blog</span></div>
-    {{!-- {{/if}} --}}
+    {{#if isHome}}
+        <div class="the-tech-blog-your-dashboard"><span class="the-tech-blog-your-dashboard-title">The Tech Blog</span></div>
+    {{else}}
+        <div class="the-tech-blog-your-dashboard"><span class="the-tech-blog-your-dashboard-title">Your Dashboard</span></div>
+    {{/if}}
   </div>
       <main class="container container-fluid mt-5">
         {{{ body }}}
@@ -65,6 +65,11 @@
       }
   }
   document.links[active].className = 'nav-link active';
+  {{!-- const winUrl = window.location.toString().split("/")[window.location.toString().split("/").length - 1];
+  console.log("window.location: " + winUrl);
+  if (winUrl === "dashboard") {
+
+  } --}}
   </script>
   </body>
 
